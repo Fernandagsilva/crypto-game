@@ -13,15 +13,6 @@ generateSequence n = do
   return (r:rs) 
 
 
--- verify if two lists are equals
-verify :: [Int] -> [Int] -> Bool
-verify [] [] = True
-verify [] _ = False
-verify _ [] = False
-verify (x1:xs1) (x2:xs2) | (x1 == x2) = verify xs1 xs2
-                         | otherwise = False
-
-
 -- Converts an user entry to an integer list
 convert :: Read a => String -> [a]
 convert = map read . words
@@ -44,7 +35,7 @@ removeCompletedPositions (x:xs) (y:ys) =
                 removeCompletedPositions xs ys
          else do
                 [x]++(removeCompletedPositions xs ys)
-                
+
 
 -- Removes a partial element from the list
 removePartialElement :: Int -> [Int] -> [Int]
