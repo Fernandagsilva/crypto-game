@@ -16,7 +16,6 @@ startGame sequenceRandom count =
             let partialPositions = partialCount newSequenceUser newSequenceRandom
             let totalPositions = 4
             let rounds = count + 1
-            print sequenceRandom
             if completedCount == totalPositions
             then do 
                   putStr "Completed: "

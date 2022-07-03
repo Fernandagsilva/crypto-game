@@ -8,7 +8,7 @@ import System.Random
 generateSequence :: Int -> IO ([Int])
 generateSequence 0 = return []
 generateSequence n = do
-  r  <- randomRIO (1::Int, 9) 
+  r  <- randomRIO (1::Int, 6) 
   rs <- generateSequence (n-1)
   return (r:rs) 
 
